@@ -1,3 +1,15 @@
+server:
+  port: 8000
+logging:
+  pattern:
+    console: "${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}:%line)-%msg%n}"
+  level:
+    org.springframework.security: ${SPRING_SECURITY_LOG_LEVEL:TRACE}
 spring:
   application:
     name: security-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/kiwidb
+    username: kiwi
+    password: kiwi
+    driver-class-name: com.mysql.cj.jdbc.Driver
